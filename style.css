@@ -43,7 +43,18 @@ body {
   color: red;
 }
 
-.navbar .navbar-extra a{
+.add-job-btn {
+  background-color: #c41e3a;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/*.navbar .navbar-extra a{
   background-color: #d32f2f;
   color: #fff;
   padding: 15px 30px;
@@ -52,27 +63,30 @@ body {
   align-items: baseline;
   font-size: 15px;
   margin: 0 6rem;
-}
+}*/
 
 /* Main Section */
 .main {
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
   align-items:flex-end;
-  padding: 150px;
-  text-align: center;
+  /*padding: 150px;*/
+  padding-bottom: 200px;
+  text-align: left;
   background-color: #fce7d3 ;
 }
 
 .main-content {
-  max-width: 600px;
+  width: 600px;
 }
 
 .main-content h1 {
-  font-size: 2.6em;
+  font-size: 2.8em;
   color: #333;
   justify-content: end;
   margin-left: 15px;
+  margin-top: 20px;
+  font-weight: 600;
 }
 
 .main-content h1 span {
@@ -81,11 +95,51 @@ body {
 
 .main-content p {
   margin-top: 10px;
+  margin-bottom: 30px;
+  margin-left: 10px;
   font-size: 13px;
   color: #666;
 }
 
-.search-bar {
+/* Search Box Styles */
+.search-box {
+  background: white;
+  padding: 15px;
+  margin-left: 20px;
+  margin-top: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  display: flex;
+  gap: 10px;
+  max-width: 600px;
+}
+
+.search-input {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+  width: 80%;
+}
+
+.search-btn {
+  background: #c41e3a;
+  color: white;
+  border: none;
+  padding: 24px 60px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.search-btn:hover {
+  background: #a01830;
+}
+
+/*.search-bar {
   display: flex;
   margin-top: 55px;
 }
@@ -106,10 +160,10 @@ body {
   border-radius: 0 10px 10px 0;
   font-size: 10px;
   cursor: pointer;
-}
+}*/
 
 .illustration img {
-  width: 450px;
+  width: 600px;
   height: auto;
   display: flex;
   border-radius: 30px;
@@ -117,7 +171,6 @@ body {
   padding-right: 2px;
   padding-top: 20px;
   margin-top: 40px;
-  
 }
 
 /* Popular job*/
@@ -551,3 +604,4 @@ body {
       justify-content: center;
   }
 }
+

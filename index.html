@@ -24,11 +24,14 @@
       <a href="#">Home</a>
       <a href="#">Find Jobs</a>
       <a href="#">Blog</a>
-      <a href="#">About Us</a>
-      <a href="#">Contact Us</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="contactus.html">Contact Us</a>
     </div>
     <div class="navbar-extra">
-      <a href="#" id="phone" >Add Job Now<i data-feather="phone"></i></a>
+      <a href="#post-job" class="add-job-btn">
+        Add Job Now
+        <i data-feather="message-circle"></i>
+      <!--<a href="#" id="phone" >Add Job Now<i data-feather="phone"></i></a>-->
       </a>
     </div>
   </nav>
@@ -40,10 +43,18 @@
     <div class="main-content">
       <h1>Your One Stop <span>Solution</span></h1>
       <p>Trusted by over 100 clients. Your satisfaction is next!</p>
-      <div class="search-bar">
+      <div class="search-box">
+        <input 
+            type="text" 
+            class="search-input" 
+            placeholder="Job title, keywords ..."
+        >
+        <button class="search-btn">Find Jobs</button>
+      </div>
+      <!--<div class="search-bar">
         <input type="text" placeholder="Job title, keywords ...">
         <button>Find Jobs</button>
-      </div>
+      </div>-->
     </div>
     <!-- Main Section end-->
 
@@ -193,7 +204,10 @@
               <div class="footer-address">
                   Gedung Wirausaha Lantai 1 Unit 104<br>
                   Jalan Haji R. Rasuna Said Kavling C5,<br>
-                  DKI Jakarta Utara Kepulauan Seribu Indonesia
+                  RT.3/RW.1, Karet, Kecamatan Setiabudi, Daerah<br>
+                  Khusus Ibukota Jakarta 12920<br>
+                  <br>
+                  hello@sabikerja.com
               </div>
           </div>
 
