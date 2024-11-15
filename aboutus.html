@@ -42,6 +42,9 @@
             padding-bottom: 50px;
             text-align: center;
         }
+        header small span {
+            color: #d32f2f;
+        }
 
         /*images*/
         .container-images {
@@ -50,7 +53,7 @@
             grid-template-rows: repeat(2, 1fr);
             gap: 10px;
             max-width: 1200px;
-            margin: 130px;
+            margin: 95px;
         }
         .grid-item {
           overflow: hidden;
@@ -61,6 +64,76 @@
           width: 100%;
           height: 100%;
           object-fit: cover;
+        }
+
+        /*About SabiKerja*/
+        .card {
+            width: 800px;
+            background: white;
+            margin-top: 10px;
+            margin-bottom: 90px;
+            margin-left: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        .card h1 span {
+            color: #d32f2f;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            margin-right: 7px;
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(to bottom, #c2bdbb, #d6d5d3);
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h1::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: #e0e0e0;
+            margin-left: 10px;
+        }
+
+        .content {
+            color: #505965;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+
+        .tagline {
+            font-style: italic;
+            color:  #d32f2f;
+            text-align: right;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 640px) {
+            .card {
+                padding: 25px;
+                margin: 15px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .content {
+                font-size: 1rem;
+            }
         }
 
         /* Problem Solving */
@@ -74,6 +147,9 @@
             text-align: center;
             margin-bottom: 40px;
             color: #2c3e50;
+        }
+        .problem-solving h5 span {
+            color: #d32f2f;
         }
 
         .problem-grid {
@@ -111,10 +187,13 @@
         }
 
         .testimonials h2 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             text-align: center;
             margin-bottom: 40px;
             color: #2c3e50;
+        }
+        .testimonials h2 span {
+            color: #d32f2f;
         }
 
         .testimonial-slider {
@@ -130,15 +209,15 @@
         .testimonial {
             flex: 0 0 100%;
             padding: 30px;
-            background: #fce7d3;
+            background:#f8fafc;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
 
         .testimonial img {
-            width: 80px;
-            height: 80px;
+            width: 90px;
+            height: 90px;
             border-radius: 50%;
             margin-bottom: 20px;
         }
@@ -160,10 +239,13 @@
         }
 
         .services h2 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             text-align: center;
             margin-bottom: 40px;
             color: #2c3e50;
+        }
+        .services h2 span {
+            color: #d32f2f;
         }
 
         .service-grid {
@@ -209,10 +291,13 @@
         }
 
         .job-search h2 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 15px;
             color: #2c3e50;
+        }
+        .job-search h2 span {
+            color: #d32f2f;
         }
 
         .job-search p {
@@ -299,37 +384,61 @@
         }
 
         /*Self Assesment*/
-
         .self-assessment {
-            padding: 80px 0;
             background: #f8fafc;
             text-align: center;
+        }
+        .self-assessment h2 {
+            padding: 2px 0;
+            background: #f8fafc;
+            text-align: center;
+            font-size: 1.8rem;
+        }
+        .self-assessment h2 span {
+            color: #d32f2f;
+        }
+        .self-assessment p {
+            padding: 5px ;
+            background: #f8fafc;
+            text-align: center;
+        }
+        .self-assessment button {
+            padding: 10px ;
+            text-align: center;
+            padding: 15px 35px;
+            background: #FF4B33;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-top: -0.5px;
         }
 
         /* Social Media */
         .social-media {
-            padding: 80px 0;
+            padding: 25px 0;
             background: white;
-            text-align: center;
+            text-align: right;
         }
 
-        .social-media h2 {
-            font-size: 2.5rem;
+        /*.social-media h2 {
+            font-size: 1.8rem;
             margin-bottom: 40px;
             color: #2c3e50;
-        }
+        }*/
 
         .social-icons {
             display: flex;
-            justify-content: center;
-            gap: 20px;
+            justify-content: right;
+            gap: 10px;
             margin-bottom: 40px;
         }
 
         .social-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            border-radius: 80%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -398,7 +507,7 @@
     <header>
         <div class="container">
             <p>"In a world of endless possibilities, startups and small businesses hold the power to attract top talent by fostering innovation, providing meaningful work, and creating a culture where every individual can make an impact. Talent doesn’t just seek big names—it seeks purpose, growth, and the opportunity to be part of something extraordinary from the ground up. Be bold, invest in people, and watch your team thrive together."</p>
-            <small>-SabiKerja-</small>
+            <small><span>-SabiKerja-</span></small>
         </div>
     </header>
 
@@ -414,10 +523,21 @@
         <div class="grid-item"><img src="image/image8.png" alt="Image 8"></div>
       </div>
 
+      <!--About SabiKerja-->
+      <div class="card">
+        <h1>About <span>SabiKerja</span></h1>
+        <div class="content">
+            SabiKerja is a one-stop solution for talent's needs. We are a headhunter and talent solutions provider that provides ideal talent to the company because we believe that a great company begins with great people who develop and grow together. At SabiKerja, we value our service-level agreement between talent and company in order to provide fast and high-quality services. We began in a pandemic situation in 2021 due to a severe experience with Employment agencies, and we aim to provide a better solution and experience to all of the companies we assist.
+        </div>
+        <div class="tagline">
+            SabiKerja? SabiLah!
+        </div>
+    </div>
+
     <!-- Problem Solving -->
     <section class="problem-solving">
         <div class="container">
-            <h5>We assist you in resolving these issues</h5>
+            <h5> <span>We assist</span> you in <span>resolving</span> these <span>issues</span></h5>
             <div class="problem-grid">
                 <div class="problem-card">
                     <h3>Operational Efficiency</h3>
@@ -438,21 +558,21 @@
     <!-- Testimonials -->
     <section class="testimonials">
         <div class="container">
-            <h2>Testimonials From Our Customers</h2>
+            <h2> <span>Testimonials</span> From <span>Our</span> Customers</h2>
             <div class="testimonial-slider">
                 <div class="testimonial-container">
                     <div class="testimonial">
-                        <img src="/api/placeholder/80/80" alt="Client 1">
+                        <img src="image/pro1.jpg" alt="Client 1">
                         <h3>John Doe</h3>
                         <p>"The solutions provided were very helpful in improving the operational efficiency of our company."</p>
                     </div>
                     <div class="testimonial">
-                        <img src="/api/placeholder/80/80" alt="Client 2">
+                        <img src="image/pro2.jpg" alt="Client 2">
                         <h3>Jane Smith</h3>
                         <p>"The professional team and satisfactory results."</p>
                     </div>
                     <div class="testimonial">
-                        <img src="/api/placeholder/80/80" alt="Client 3">
+                        <img src="image/pro3.jpg" alt="Client 3">
                         <h3>Mike Johnson</h3>
                         <p>"The training program was very effective for the development of our team."</p>
                     </div>
@@ -464,7 +584,7 @@
     <!-- Our Services -->
     <section class="services">
         <div class="container">
-            <h2>Our Services</h2>
+            <h2>Our <span>Services</span></h2>
             <div class="service-grid">
                 <div class="service-card">
                     <i class="fas fa-briefcase"></i>
@@ -488,7 +608,7 @@
     <!-- Job Search -->
     <section class="job-search">
         <div class="container">
-            <h2>Join Our Team</h2>
+            <h2>Join <span>Our Team</span></h2>
             <p>Temukan peluang karir yang sesuai dengan passion Anda</p>
             <div class="search-container">
                 <div class="search-box">
@@ -504,7 +624,7 @@
 
     <!--Self Assesment-->
     <section class="self-assessment">
-        <h2>Self-Assessment Test</h2>
+        <h2><span>Self-Assessment</span> Test</h2>
         <p>Click the button below to take our self-assessment test and see how you measure up.</p>
         <button>Take Test</button>
       </section>
@@ -512,7 +632,7 @@
     <!-- Social Media -->
     <section class="social-media">
         <div class="container">
-            <h2>Follow Us on Social Media</h2>
+            <!--<h2>Follow Us on Social Media</h2>-->
             <div class="social-icons">
                 <a href="#" class="social-icon linkedin">
                     <i class="fab fa-linkedin-in"></i>
@@ -535,19 +655,19 @@ const testimonials = [
     {
         name: "John Doe",
         role: "CEO TechCorp",
-        image: "/api/placeholder/80/80",
+        image: "image/pro1",
         text: "Solusi yang diberikan sangat membantu efisiensi operasional perusahaan kami."
     },
     {
         name: "Jane Smith",
         role: "Director of Operations",
-        image: "/api/placeholder/80/80",
+        image: "image/pro2",
         text: "Tim yang professional dan hasil yang memuaskan."
     },
     {
         name: "Mike Johnson",
         role: "HR Manager",
-        image: "/api/placeholder/80/80",
+        image: "image/pro3",
         text: "Program pelatihan yang sangat efektif untuk pengembangan tim kami."
     }
 ];

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Job</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fce7d3;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+    .container h1{
+        font-size: 2rem;
+        font-weight: 500;
+    }
+    .container h1 span {
+        color:#d32f2f;
+    }
+
+    .search-bar {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 3rem;
+    }
+
+    .search-bar input {
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 2rem 0 0 2rem;
+      width: 400px;
+    }
+
+    .search-bar button {
+      background-color: #d32f2f;
+      color: #fff;
+      font-size: 1rem;
+      padding: 1rem 1.5rem;
+      border: none;
+      border-radius: 0 2rem 2rem 0;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .search-bar button:hover {
+      background-color: #d32f2f;
+    }
+
+    .job-listings {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .job-card {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .job-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .job-card h3 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      color: #d32f2f;
+    }
+
+    .job-card p {
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    .job-card a {
+      display: inline-block;
+      background-color: #d32f2f;
+      color: #fff;
+      text-decoration: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 2rem;
+      transition: background-color 0.3s;
+    }
+
+    .job-card a:hover {
+      background-color: #d32f2f;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1><span>Discover</span> Your <span>Dream</span> Job</h1>
+    <div class="search-bar">
+      <input type="text" placeholder="Search for jobs..." id="search-input">
+      <button id="search-btn">Search</button>
+    </div>
+    <div class="job-listings" id="job-listings"></div>
+  </div>
+
+  <script>
+    const jobs = [
+      {
+        title: 'Software Engineer',
+        company: 'ABC Tech',
+        location: 'New York, NY',
+        description: 'Seeking experienced software engineer to join our growing team.'
+      },
+      {
+        title: 'Marketing Coordinator',
+        company: 'XYZ Corp',
+        location: 'San Francisco, CA',
+        description: 'Opportunity for a talented marketing professional to join our dynamic company.'
+      },
+      {
+        title: 'Graphic Designer',
+        company: 'Design Collective',
+        location: 'Seattle, WA',
+        description: 'Creative agency looking for a skilled graphic designer to contribute to our projects.'
+      },
+      {
+        title: 'Product Manager',
+        company: 'Innovative Solutions',
+        location: 'Chicago, IL',
+        description: 'Lead the development of our cutting-edge products as a customer-centric product manager.'
+      },
+      {
+        title: 'Data Analyst',
+        company: 'Data-Driven Corp',
+        location: 'Boston, MA',
+        description: 'Utilize your analytical skills to uncover insights and drive business decisions.'
+      },
+      {
+        title: 'UX Designer',
+        company: 'Intuitive Designs',
+        location: 'Portland, OR',
+        description: 'Join our team of designers to create exceptional user experiences for our clients.'
+      }
+    ];
+
+    function displayJobs() {
+      const jobListingsContainer = document.getElementById('job-listings');
+      jobListingsContainer.innerHTML = '';
+
+      jobs.forEach(job => {
+        const jobCard = document.createElement('div');
+        jobCard.classList.add('job-card');
+
+        const titleElement = document.createElement('h3');
+        titleElement.textContent = job.title;
+
+        const companyElement = document.createElement('p');
+        companyElement.textContent = `Company: ${job.company}`;
+
+        const locationElement = document.createElement('p');
+        locationElement.textContent = `Location: ${job.location}`;
+
+        const descriptionElement = document.createElement('p');
+        descriptionElement.textContent = job.description;
+
+        const applyButton = document.createElement('a');
+        applyButton.href = '#';
+        applyButton.textContent = 'Apply Now';
+
+        jobCard.appendChild(titleElement);
+        jobCard.appendChild(companyElement);
+        jobCard.appendChild(locationElement);
+        jobCard.appendChild(descriptionElement);
+        jobCard.appendChild(applyButton);
+
+        jobListingsContainer.appendChild(jobCard);
+      });
+    }
+
+    document.getElementById('search-btn').addEventListener('click', () => {
+      const searchQuery = document.getElementById('search-input').value.toLowerCase();
+      const filteredJobs = jobs.filter(job =>
+        job.title.toLowerCase().includes(searchQuery) ||
+        job.company.toLowerCase().includes(searchQuery) ||
+        job.location.toLowerCase().includes(searchQuery) ||
+        job.description.toLowerCase().includes(searchQuery)
+      );
+      displayJobs(filteredJobs);
+    });
+
+    displayJobs();
+  </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creative Login</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(45deg, #fce7d3, #fce7d3);
+      font-family: Arial, sans-serif;
+    }
+
+    .login-container {
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+      width: 400px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 2rem;
+      color:#666462;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input {
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 1rem;
+      background-color: #d32f2f;
+      color: #fff;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-bottom: 20px;
+    }
+
+    button:hover {
+      background-color: #666462;
+    }
+
+    .forgot-password {
+      margin-top: 1rem;
+      color: #666462;
+      text-decoration: none;
+    }
+
+    .forgot-password:hover {
+      color: #d32f2f;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h1>Login</h1>
+    <form id="login-form">
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+    <a href="#" class="forgot-password">Forgot Password?</a>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById('login-form');
+
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = loginForm.elements.email.value;
+      const password = loginForm.elements.password.value;
+      // Add login logic here
+      console.log('Login:', email, password);
+    });
+  </script>
+</body>
+</html>

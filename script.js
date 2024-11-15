@@ -124,3 +124,24 @@ document.querySelectorAll('.social-icons a').forEach(icon => {
     });
 });
 
+//Chat bot logo 
+const chatBubble = document.querySelector('.chat-bubble');
+    
+chatBubble.addEventListener('click', () => {
+  chatBubble.style.background = getRandomColor();
+  const bubble = chatBubble.querySelector(':before');
+  if (bubble) {
+    bubble.style.borderTopColor = chatBubble.style.background;
+  }
+});
+
+function getRandomColor() {
+  const colors = [
+    '#2196F3', // Blue
+    '#4CAF50', // Green
+    '#9C27B0', // Purple
+    '#FF9800', // Orange
+    '#E91E63'  // Pink
+  ];
+  return colors[Math.floor(Math.random() * colors.length)];
+}
