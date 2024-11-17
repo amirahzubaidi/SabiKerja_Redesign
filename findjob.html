@@ -1,201 +1,218 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Find Job</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
-    body {
-      font-family: 'Poppins', sans-serif;
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
       background-color: #fce7d3;
+      padding: 2rem;
     }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 3rem 2rem;
-    }
-    .container h1{
-        font-size: 2rem;
-        font-weight: 500;
-    }
-    .container h1 span {
-        color:#d32f2f;
+    .header {
+      text-align: left;
+      margin-bottom: 2rem;
     }
 
-    .search-bar {
+    .header h1 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+
+    .header h1 span.red {
+      color: #d32f2f;
+    }
+
+    .search-container {
       display: flex;
       justify-content: center;
       margin-bottom: 3rem;
     }
 
-    .search-bar input {
-      padding: 1rem 1.5rem;
-      font-size: 1rem;
+    .search-container input {
+      width: 50%;
+      padding: 0.8rem;
       border: none;
-      border-radius: 2rem 0 0 2rem;
-      width: 400px;
+      border-radius: 5px 0 0 5px;
+      outline: none;
     }
 
-    .search-bar button {
+    .search-container button {
+      padding: 0.8rem 1.5rem;
       background-color: #d32f2f;
-      color: #fff;
-      font-size: 1rem;
-      padding: 1rem 1.5rem;
+      color: white;
       border: none;
-      border-radius: 0 2rem 2rem 0;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+    }
+
+    .jobs-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .job-card {
+      background-color: white;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .job-title {
+      color: #d32f2f;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .company, .location {
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .company span, .location span {
+      font-weight: bold;
+    }
+
+    .description {
+      margin: 1rem 0;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    .apply-btn {
+      background-color: #d32f2f;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 5px;
       cursor: pointer;
       transition: background-color 0.3s;
     }
 
-    .search-bar button:hover {
-      background-color: #d32f2f;
-    }
-
-    .job-listings {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-
-    .job-card {
-      background-color: #fff;
-      padding: 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s;
-    }
-
-    .job-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .job-card h3 {
-      margin-top: 0;
-      margin-bottom: 1rem;
-      color: #d32f2f;
-    }
-
-    .job-card p {
-      margin-top: 0;
-      margin-bottom: 1.5rem;
-    }
-
-    .job-card a {
-      display: inline-block;
-      background-color: #d32f2f;
-      color: #fff;
-      text-decoration: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 2rem;
-      transition: background-color 0.3s;
-    }
-
-    .job-card a:hover {
-      background-color: #d32f2f;
+    .apply-btn:hover {
+      background-color: #6e4f4f;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1><span>Discover</span> Your <span>Dream</span> Job</h1>
-    <div class="search-bar">
-      <input type="text" placeholder="Search for jobs..." id="search-input">
-      <button id="search-btn">Search</button>
+  <div class="header">
+    <h1><span class="red">Discover</span> Your <span class="red">Dream</span> Job</h1>
+    <div class="search-container">
+      <input type="text" placeholder="Search for jobs...">
+      <button>Search</button>
     </div>
-    <div class="job-listings" id="job-listings"></div>
+  </div>
+
+  <div class="jobs-container">
+    <div class="job-card">
+      <h2 class="job-title">Software Engineer</h2>
+      <p class="company">Company: <span>ABC Tech</span></p>
+      <p class="location">Location: <span>New York, NY</span></p>
+      <p class="description">Seeking experienced software engineer to join our growing team.</p>
+      <a href="jobposting1.html">
+      <button class="apply-btn">Apply Now</button>
+      </a>
+    </div>
+
+    <div class="job-card">
+      <h2 class="job-title">Marketing Coordinator</h2>
+      <p class="company">Company: <span>XYZ Corp</span></p>
+      <p class="location">Location: <span>San Francisco, CA</span></p>
+      <p class="description">Opportunity for a talented marketing professional to join our dynamic company.</p>
+      <a href="jobposting2.html">
+      <button class="apply-btn">Apply Now</button>
+      </a>
+    </div>
+
+    <div class="job-card">
+      <h2 class="job-title">Graphic Designer</h2>
+      <p class="company">Company: <span>Design Collective</span></p>
+      <p class="location">Location: <span>Seattle, WA</span></p>
+      <p class="description">Creative agency looking for a skilled graphic designer to contribute to our projects.</p>
+      <a href="jobposting3.html">
+      <button class="apply-btn">Apply Now</button>
+      </a>
+    </div>
+
+    <div class="job-card">
+      <h2 class="job-title">Product Manager</h2>
+      <p class="company">Company: <span>Innovative Solutions</span></p>
+      <p class="location">Location: <span>Chicago, IL</span></p>
+      <p class="description">Lead the development of our cutting-edge products as a customer-centric product manager.</p>
+      <a href="jobposting4.html">
+      <button class="apply-btn">Apply Now</button>
+      </a>
+    </div>
+
+    <div class="job-card">
+      <h2 class="job-title">Data Analyst</h2>
+      <p class="company">Company: <span>Data-Driven Corp</span></p>
+      <p class="location">Location: <span>Boston, MA</span></p>
+      <p class="description">Utilize your analytical skills to uncover insights and drive business decisions.</p>
+      <a href="jobposting5.html">
+      <button class="apply-btn">Apply Now</button>
+      </a>
+    </div>
+
+    <div class="job-card">
+      <h2 class="job-title">UX Designer</h2>
+      <p class="company">Company: <span>Intuitive Designs</span></p>
+      <p class="location">Location: <span>Portland, OR</span></p>
+      <p class="description">Join our team of designers to create exceptional user experiences for our clients.</p>
+      <a href="jobposting6.html">
+      <button class="apply-btn">Apply Now</button>
+      </a>
+    </div>
   </div>
 
   <script>
-    const jobs = [
-      {
-        title: 'Software Engineer',
-        company: 'ABC Tech',
-        location: 'New York, NY',
-        description: 'Seeking experienced software engineer to join our growing team.'
-      },
-      {
-        title: 'Marketing Coordinator',
-        company: 'XYZ Corp',
-        location: 'San Francisco, CA',
-        description: 'Opportunity for a talented marketing professional to join our dynamic company.'
-      },
-      {
-        title: 'Graphic Designer',
-        company: 'Design Collective',
-        location: 'Seattle, WA',
-        description: 'Creative agency looking for a skilled graphic designer to contribute to our projects.'
-      },
-      {
-        title: 'Product Manager',
-        company: 'Innovative Solutions',
-        location: 'Chicago, IL',
-        description: 'Lead the development of our cutting-edge products as a customer-centric product manager.'
-      },
-      {
-        title: 'Data Analyst',
-        company: 'Data-Driven Corp',
-        location: 'Boston, MA',
-        description: 'Utilize your analytical skills to uncover insights and drive business decisions.'
-      },
-      {
-        title: 'UX Designer',
-        company: 'Intuitive Designs',
-        location: 'Portland, OR',
-        description: 'Join our team of designers to create exceptional user experiences for our clients.'
-      }
-    ];
+    // Search functionality
+    const searchInput = document.querySelector('input');
+    const searchButton = document.querySelector('.search-container button');
+    const jobCards = document.querySelectorAll('.job-card');
 
-    function displayJobs() {
-      const jobListingsContainer = document.getElementById('job-listings');
-      jobListingsContainer.innerHTML = '';
-
-      jobs.forEach(job => {
-        const jobCard = document.createElement('div');
-        jobCard.classList.add('job-card');
-
-        const titleElement = document.createElement('h3');
-        titleElement.textContent = job.title;
-
-        const companyElement = document.createElement('p');
-        companyElement.textContent = `Company: ${job.company}`;
-
-        const locationElement = document.createElement('p');
-        locationElement.textContent = `Location: ${job.location}`;
-
-        const descriptionElement = document.createElement('p');
-        descriptionElement.textContent = job.description;
-
-        const applyButton = document.createElement('a');
-        applyButton.href = '#';
-        applyButton.textContent = 'Apply Now';
-
-        jobCard.appendChild(titleElement);
-        jobCard.appendChild(companyElement);
-        jobCard.appendChild(locationElement);
-        jobCard.appendChild(descriptionElement);
-        jobCard.appendChild(applyButton);
-
-        jobListingsContainer.appendChild(jobCard);
+    function searchJobs() {
+      const searchTerm = searchInput.value.toLowerCase();
+      
+      jobCards.forEach(card => {
+        const title = card.querySelector('.job-title').textContent.toLowerCase();
+        const company = card.querySelector('.company').textContent.toLowerCase();
+        const location = card.querySelector('.location').textContent.toLowerCase();
+        
+        if (title.includes(searchTerm) || company.includes(searchTerm) || location.includes(searchTerm)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
       });
     }
 
-    document.getElementById('search-btn').addEventListener('click', () => {
-      const searchQuery = document.getElementById('search-input').value.toLowerCase();
-      const filteredJobs = jobs.filter(job =>
-        job.title.toLowerCase().includes(searchQuery) ||
-        job.company.toLowerCase().includes(searchQuery) ||
-        job.location.toLowerCase().includes(searchQuery) ||
-        job.description.toLowerCase().includes(searchQuery)
-      );
-      displayJobs(filteredJobs);
+    searchButton.addEventListener('click', searchJobs);
+    searchInput.addEventListener('keyup', (e) => {
+      if (e.key === 'Enter') {
+        searchJobs();
+      }
     });
 
-    displayJobs();
+    // Apply button click animation
+    const applyButtons = document.querySelectorAll('.apply-btn');
+    applyButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        button.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+          button.style.transform = 'scale(1)';
+        }, 100);
+      });
+    });
   </script>
 </body>
 </html>

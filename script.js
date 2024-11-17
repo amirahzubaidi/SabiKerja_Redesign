@@ -46,7 +46,7 @@
       });
   }, { threshold: 0.5 });
 
-  document.querySelectorAll('.stat-number').forEach(stat => {
+  document.querySelectorAll('.stat-number .stat-number-img').forEach(stat => {
       observer.observe(stat);
   });
 
