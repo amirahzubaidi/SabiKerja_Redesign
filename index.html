@@ -30,7 +30,7 @@
       <a href="register.html">Register</a>
     </div>
     <div class="navbar-extra">
-      <a href="#post-job" class="add-job-btn">
+      <a href="addjobform.html" class="add-job-btn">
         Add Job Now
         <i data-feather="message-circle"></i>
       <!--<a href="#" id="phone" >Add Job Now<i data-feather="phone"></i></a>-->
@@ -176,21 +176,23 @@
 <!--Recruitment end-->
 
     <!-- Stats Section -->
-    <section class="stats">
-      <div class="stat-item">
-        <div class="stat-number">10</div>
-        <div class="stat-text-img">Menit</div>
-        <div class="stat-text">To find a good candidate</div>
-    </div>
-    <div class="stat-item">
-        <div class="stat-number">25000</div>
-        <div class="stat-text">Talent ready</div>
-    </div>
-    <div class="stat-item">
-        <div class="stat-number">5000</div>
-        <div class="stat-text">Happy Clients</div>
-    </div>
-  </section>
+    <div class="stats-container">
+      <div class="stat-box">
+          <div class="number-container">
+              <span class="number" id="minutes">0</span>
+              <span class="minutes-text">Minutes</span>
+          </div>
+          <div class="label">To find a good candidate</div>
+      </div>
+      <div class="stat-box">
+          <div class="number" id="talent">0</div>
+          <div class="label">Talent ready</div>
+      </div>
+      <div class="stat-box">
+          <div class="number" id="clients">0</div>
+          <div class="label">Happy Clients</div>
+      </div>
+  </div>
   <!-- End Section -->
 
   <!-- Footer Section -->

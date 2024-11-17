@@ -101,6 +101,86 @@
     .apply-btn:hover {
       background-color: #6e4f4f;
     }
+
+    /* Footer Section */
+    .footer {
+      padding-top: 150px;
+      background: #fce7d3;
+      border-top: 1px solid #eee;
+    }
+    
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding: 0 20px;
+    }
+    
+    .footer-logo img {
+      width: 200px;
+      margin-bottom: 20px;
+    }
+    
+    .footer-contact h3 {
+      color: #333;
+      margin-bottom: 15px;
+    }
+    
+    .footer-contact p {
+      color: #FF4B33;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    
+    .footer-address {
+      color: #666;
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+    
+    .footer-links h3 {
+      color: #333;
+      margin-bottom: 20px;
+      font-size: 1.2rem;
+    }
+    
+    .footer-links ul {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+    
+    .footer-links a {
+      color: #666;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: #FF4B33;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .social-links img {
+      width: 50px;
+      height: 50px;
+      margin: 0 -5px;
+      border-radius: 8px;
+      transition: transform 0.2s;
+    }
+    
+    .social-links:hover {
+      transform: translateY(-3px);
+    }
+
   </style>
 </head>
 <body>
@@ -173,6 +253,53 @@
       </a>
     </div>
   </div>
+
+   <!-- Footer Section -->
+   <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-contact">
+            <div class="footer-logo">
+                <img src="image/logo.png" alt="SabiKerja Logo">
+            </div>
+            <h3>Call us</h3>
+            <p>+62 21 509-969-69 Ext 1307</p>
+            <p>+62 8517 9898 921</p>
+            <div class="footer-address">
+                Gedung Wirausaha Lantai 1 Unit 104<br>
+                Jalan Haji R. Rasuna Said Kavling C5,<br>
+                RT.3/RW.1, Karet, Kecamatan Setiabudi, Daerah<br>
+                Khusus Ibukota Jakarta 12920<br>
+                <br>
+                hello@sabikerja.com
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <h3>For Candidates</h3>
+            <ul>
+                <li><a href="#">Browse Jobs</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-links">
+            <h3>About Us</h3>
+            <ul>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-links">
+            <h3>Visit Us</h3>
+            <div class="social-links">
+              <a href="#"><img src="image/Linkedin.png" alt="LinkedIn"></a>
+              <a href="#"><img src="image/Instagram.png" alt="Instagram"></a>
+              <a href="#"><img src="image/Whatsapp.png" alt="WhatsApp"></a>
+              <a href="#"><img src="image/Facebook.png" alt="Facebook"></a>
+            </div>
+        </div>
+    </div>
+</footer>
 
   <script>
     // Search functionality

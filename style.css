@@ -445,7 +445,7 @@ body {
 }
 
 .recruit-button:hover {
-  background-color: #b71c1c;
+  background-color: #dd1d1d;
 }
 
 /* Bagian akhir*/
@@ -457,36 +457,54 @@ body {
 }
 
 /* Stats Section */
-.stats {
-  /*padding: 60px 0;*/
-  text-align: center;
-  background: #fff;
+.stats-container {
   display: flex;
-  justify-content: center;
-  gap: 100px;
+  gap: 40px;
   margin-top: -50px;
   margin-right: 0px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   margin-left: 0px;
-
+  justify-content: center;
 }
 
-.stat-item {
+.stat-box {
+  text-align: center;
+  padding: 20px;
+  min-width: 200px;
+  background: white;
+}
+
+.stat-box:hover {
+  transform: translateY(-5px);
+}
+
+.number-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.stat-number {
-  font-size: 3.5rem;
-  font-weight: bold;
-  color: #FF4B33;
+  justify-content: center;
+  align-items: baseline;
+  gap: 5px;
+  font-size: 48px;
+  font-weight:200;
+  color: #e12727;
   margin-bottom: 10px;
 }
 
-.stat-text {
+.number {
+  font-size: 48px;
+  font-weight: bold;
+  color: #e12727;
+  margin-bottom: 10px;
+}
+
+.minutes-text {
+  font-size: 24px;
+  color: #e12727;
+  font-weight: bold;
+}
+
+.label {
   color: #666;
-  font-size: 1.1rem;
+  font-size: 16px;
 }
 
 /* Footer Section */

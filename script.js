@@ -16,39 +16,43 @@
           behavior: 'smooth'
       });
   });
+  
+  // Stats Section 
+  function animateValue(id, start, end, duration) {
+    const obj = document.getElementById(id);
+    const range = end - start;
+    const minTimer = 50;
+    const stepTime = Math.abs(Math.floor(duration / range));
+    const startTime = new Date().getTime();
+    const endTime = startTime + duration;
+    let timer;
 
-  // Number animation for stats
-  function animateNumber(element, target, duration = 2000) {
-      let start = 0;
-      const increment = target / (duration / 16);
-      
-      function updateNumber() {
-          start += increment;
-          if (start < target) {
-              element.textContent = Math.floor(start);
-              requestAnimationFrame(updateNumber);
-          } else {
-              element.textContent = target;
-          }
-      }
-      
-      updateNumber();
-  }
+    function run() {
+        const now = new Date().getTime();
+        const remaining = Math.max((endTime - now) / duration, 0);
+        const value = Math.round(end - (remaining * range));
+        if (id === 'talent') {
+            obj.innerHTML = value.toLocaleString() + '++';
+        } else if (id === 'clients') {
+            obj.innerHTML = value + '+';
+        } else {
+            obj.innerHTML = value;
+        }
+        if (value === end) {
+            clearInterval(timer);
+        }
+    }
 
-  // Trigger animation when elements are in view
-  const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-          if (entry.isIntersecting) {
-              const target = parseInt(entry.target.textContent);
-              animateNumber(entry.target, target);
-              observer.unobserve(entry.target);
-          }
-      });
-  }, { threshold: 0.5 });
+    timer = setInterval(run, stepTime);
+    run();
+}
 
-  document.querySelectorAll('.stat-number .stat-number-img').forEach(stat => {
-      observer.observe(stat);
-  });
+// Start animations when page loads
+window.onload = function() {
+    animateValue("minutes", 0, 10, 1000);
+    animateValue("talent", 0, 25000, 2000);
+    animateValue("clients", 0, 50, 1500);
+}
 
   //Contact Us
 
