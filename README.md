@@ -11,7 +11,7 @@ Dalam proses pengerjaan Redesign Website SabiKerja, saya menambahkan fitur Login
 Dalam proses pengerjaan Redesign Website SabiKerja, saya menambahkan fitur Login dan Register yang berfokus pada tampilan UI saja, lalu saya membuat fitur add job form, fungsi dari form add job ini untuk memberi informasi terkait lowongan yang bisa ditambahkan oleh masyarakat umum untuk ditujukan oleh agency SabiKerja. Di halaman about us, saya menambahkan fitur self assessment test, agar para kandidat bisa menguji dirinya sebelum melamar pada posisi pekerjaan tertentu. Di halaman contact us, saya menambahkan fitur chatbox, agar para jobseeker lebih cepat menerima informasi dari agency SabiKerja tanpa menunggu adminnya.
 
 
-Tahap 1: Analisis Masalah dan Optimalisasi (Checkpoint 1)
+##### Tahap 1: Analisis Masalah dan Optimalisasi (Checkpoint 1)
 Langkah-langkah:
 1.	Identifikasi Masalah Pengguna:
     o	Melakukan riset terhadap pengalaman pengguna saat ini pada platform SabiKerja, seperti masalah navigasi, performa, atau responsivitas.
@@ -25,7 +25,7 @@ Langkah-langkah:
 Output:
 •	Peserta menemukan problem utama dari platform SabiKerja yang dapat diatasi melalui redesign.
 
-Tahap 2: Penentuan Goals Redesign (Checkpoint 2)
+##### Tahap 2: Penentuan Goals Redesign (Checkpoint 2)
 Langkah-langkah:
 1.	Diskusi Bersama Stakeholder:
     o	Berdiskusi dengan stakeholder untuk memahami tujuan utama dari website dan prioritas yang harus dicapai (misalnya, peningkatan konversi, kemudahan navigasi, atau   peningkatan kepuasan pengguna).
@@ -40,7 +40,7 @@ Langkah-langkah:
 Output:
 •	Peserta dapat menemukan insight dan ide dari tim UI/UX design untuk acuan dalam pembuatan antarmuka website SabiKerja.
 
-Tahap 3: Eksekusi Website Redesign (Checkpoint 3)
+##### Tahap 3: Eksekusi Website Redesign (Checkpoint 3)
 Langkah-langkah:
 1.	Perancangan Wireframe dan Mockup:
     o	Tim UI/UX membuat wireframe awal berdasarkan goals yang telah disepakati. Ini akan memberikan gambaran kasar tata letak halaman.
