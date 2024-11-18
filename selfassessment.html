@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Seeker Self Assessment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fce7d3;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 29px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .section-title {
+            font-size: 1.2em;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .skill-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        select, input[type="range"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+        }
+
+        .range-value {
+            text-align: center;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        button {
+            background-color: #d32f2f;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1.1em;
+        }
+
+        button:hover {
+            background-color: #525e65;
+        }
+
+        #results {
+            margin-top: 30px;
+            padding: 20px;
+            border: 2px solid grey;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .result-item {
+            margin-bottom: 10px;
+        }
+
+        .strength {
+            color: #27ae60;
+        }
+
+        .weakness {
+            color: #e74c3c;
+        }
+
+        .recommendation {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Self Assessment Test</h1>
+        <form id="assessmentForm">
+            <div class="section">
+                <div class="section-title">Personal Information</div>
+                <label for="experience">Years of Experience:</label>
+                <select id="experience" required>
+                    <option value="">Select experience level</option>
+                    <option value="0">Fresh Graduate</option>
+                    <option value="1">1-2 years</option>
+                    <option value="3">3-5 years</option>
+                    <option value="5">5+ years</option>
+                </select>
+
+                <label for="role">Desired Role:</label>
+                <select id="role" required>
+                    <option value="">Select desired role</option>
+                    <option value="frontend">Frontend Developer</option>
+                    <option value="backend">Backend Developer</option>
+                    <option value="fullstack">Full Stack Developer</option>
+                    <option value="devops">DevOps Engineer</option>
+                    <option value="mobile">Mobile Developer</option>
+                </select>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Technical Skills Assessment</div>
+                
+                <div class="skill-group">
+                    <label>Programming Languages Proficiency (0-10):</label>
+                    <input type="range" id="programming" min="0" max="10" value="5">
+                    <div class="range-value" id="programmingValue">5</div>
+                </div>
+
+                <div class="skill-group">
+                    <label>Database Management (0-10):</label>
+                    <input type="range" id="database" min="0" max="10" value="5">
+                    <div class="range-value" id="databaseValue">5</div>
+                </div>
+
+                <div class="skill-group">
+                    <label>Web Technologies (0-10):</label>
+                    <input type="range" id="web" min="0" max="10" value="5">
+                    <div class="range-value" id="webValue">5</div>
+                </div>
+
+                <div class="skill-group">
+                    <label>Problem Solving Skills (0-10):</label>
+                    <input type="range" id="problemSolving" min="0" max="10" value="5">
+                    <div class="range-value" id="problemSolvingValue">5</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Soft Skills Assessment</div>
+                
+                <div class="skill-group">
+                    <label>Communication Skills (0-10):</label>
+                    <input type="range" id="communication" min="0" max="10" value="5">
+                    <div class="range-value" id="communicationValue">5</div>
+                </div>
+
+                <div class="skill-group">
+                    <label>Team Collaboration (0-10):</label>
+                    <input type="range" id="teamwork" min="0" max="10" value="5">
+                    <div class="range-value" id="teamworkValue">5</div>
+                </div>
+            </div>
+
+            <button type="submit">Generate Assessment</button>
+        </form>
+
+        <div id="results">
+            <h2>Assessment Results</h2>
+            <div id="strengthsWeaknesses"></div>
+            <div id="recommendations" class="recommendation"></div>
+        </div>
+    </div>
+
+    <script>
+        // Update range value displays
+        document.querySelectorAll('input[type="range"]').forEach(input => {
+            input.addEventListener('input', (e) => {
+                document.getElementById(e.target.id + 'Value').textContent = e.target.value;
+            });
+        });
+
+        // Form submission handler
+        document.getElementById('assessmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const assessment = {
+                experience: document.getElementById('experience').value,
+                role: document.getElementById('role').value,
+                skills: {
+                    programming: parseInt(document.getElementById('programming').value),
+                    database: parseInt(document.getElementById('database').value),
+                    web: parseInt(document.getElementById('web').value),
+                    problemSolving: parseInt(document.getElementById('problemSolving').value),
+                    communication: parseInt(document.getElementById('communication').value),
+                    teamwork: parseInt(document.getElementById('teamwork').value)
+                }
+            };
+
+            // Analisis strengths and weaknesses
+            const strengths = [];
+            const weaknesses = [];
+            
+            for (const [skill, value] of Object.entries(assessment.skills)) {
+                if (value >= 7) {
+                    strengths.push(formatSkillName(skill));
+                } else if (value <= 4) {
+                    weaknesses.push(formatSkillName(skill));
+                }
+            }
+
+            // Generate recommend
+            const recommendations = generateRecommendations(assessment, weaknesses);
+
+            // Display results
+            displayResults(strengths, weaknesses, recommendations);
+        });
+
+        function formatSkillName(skill) {
+            return skill
+                .replace(/([A-Z])/g, ' $1')
+                .toLowerCase()
+                .replace(/^./, str => str.toUpperCase());
+        }
+
+        function generateRecommendations(assessment, weaknesses) {
+            let recommendations = [];
+
+            // Role-specific recommendations
+            const roleRecommendations = {
+                frontend: ['Learn modern JavaScript frameworks (React, Vue, or Angular)',
+                         'Practice responsive design and CSS preprocessors',
+                         'Study web accessibility standards'],
+                backend: ['Master server-side programming languages',
+                         'Learn about API design and microservices',
+                         'Study database optimization'],
+                fullstack: ['Balance both frontend and backend skills',
+                          'Learn about system architecture',
+                          'Practice full application deployment'],
+                devops: ['Study cloud platforms (AWS, Azure, or GCP)',
+                        'Learn containerization and orchestration',
+                        'Master CI/CD pipelines'],
+                mobile: ['Learn native mobile development',
+                        'Study cross-platform frameworks',
+                        'Practice mobile UI/UX design']
+            };
+
+            // Add role-specific recommendations
+            if (assessment.role in roleRecommendations) {
+                recommendations = recommendations.concat(roleRecommendations[assessment.role]);
+            }
+
+            // Add recommendations based on weaknesses
+            weaknesses.forEach(weakness => {
+                recommendations.push(`Focus on improving ${weakness.toLowerCase()} through practical projects and tutorials`);
+            });
+
+            // Experience-based recommendations
+            if (assessment.experience === "0") {
+                recommendations.push("Build a portfolio of personal projects");
+                recommendations.push("Consider internship opportunities");
+            }
+
+            return recommendations;
+        }
+
+        function displayResults(strengths, weaknesses, recommendations) {
+            const resultsDiv = document.getElementById('results');
+            const strengthsWeaknessesDiv = document.getElementById('strengthsWeaknesses');
+            const recommendationsDiv = document.getElementById('recommendations');
+
+            // Display strengths and weaknesses
+            let strengthsWeaknessesHTML = '';
+            if (strengths.length > 0) {
+                strengthsWeaknessesHTML += '<div class="result-item"><strong>Strengths:</strong><ul class="strength">';
+                strengths.forEach(strength => {
+                    strengthsWeaknessesHTML += `<li>${strength}</li>`;
+                });
+                strengthsWeaknessesHTML += '</ul></div>';
+            }
+
+            if (weaknesses.length > 0) {
+                strengthsWeaknessesHTML += '<div class="result-item"><strong>Areas for Improvement:</strong><ul class="weakness">';
+                weaknesses.forEach(weakness => {
+                    strengthsWeaknessesHTML += `<li>${weakness}</li>`;
+                });
+                strengthsWeaknessesHTML += '</ul></div>';
+            }
+
+            // Display recommendations
+            let recommendationsHTML = '<strong>Recommendations:</strong><ul>';
+            recommendations.forEach(recommendation => {
+                recommendationsHTML += `<li>${recommendation}</li>`;
+            });
+            recommendationsHTML += '</ul>';
+
+            strengthsWeaknessesDiv.innerHTML = strengthsWeaknessesHTML;
+            recommendationsDiv.innerHTML = recommendationsHTML;
+            resultsDiv.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
